@@ -4,12 +4,12 @@ Ext.define('vertical.view.Main', {
     config: {
         fullscreen: true,
         layout: 'card',
-         inline: {
-                    wrap: false
-                },
-        scrollable:{
-            direction:'vertical'
-        },
+        //  inline: {
+        //             wrap: false
+        //         },
+        // scrollable:{
+        //     direction:'vertical'
+        // },
         items: [
 
            

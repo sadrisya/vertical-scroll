@@ -1,0 +1,6 @@
+.sencha
+/Output
+/resources
+/app/form
+/resources/sass/.sass-cache
+app.css
