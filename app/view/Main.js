@@ -25,11 +25,11 @@ Ext.define('vertical.view.Main', {
                     direction: 'horizontal'
                 },
                 itemTpl: [
-                    '<table>', '<tr class="singleList">',
-                    '<td><div class="image" style="width:1.5em;"><div></td>',
-                    '<td><div class="names" style="">{name}</div></td>',
-                    '</tr>', '</table>'
-                ],
+                   '<table>','<tr class="singleList">',
+            '<td><div class="image" style="width:1.5em;"><div></td>',
+            '<td><div class="names" style="">{name}</div><div  class="desc">{desc}</div></td>',
+            '<td><div class ="imicon"></div></td>','</tr>','</table>'
+        ],
 
                 //  plugins:[
                 //      { xclass: 'Ext.plugin.ListPaging' }

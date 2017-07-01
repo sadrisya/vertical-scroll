@@ -16,50 +16,72 @@ Ext.define('vertical.controller.MyController', {
     },
     initmain: function () {
         var debitStore = Ext.getStore('debitStore');
+        debitStore.sort('weightage', 'DESC');
+        
         console.log('These are the names saved:');
         //  console.log( hotelsStore.getValues());
-
+        var weightageSorted = [], i = 0;
         debitStore.each(function (record) {
-
+            console.log(record.data);
+            weightageSorted[i] = record.data;
+            i++;
             console.log('- ' + record.get('name'));
 
         });
-        var debit = debitStore.getAt(1);
+        console.log('weightageSorted');
+        console.log(weightageSorted);
+var finalWeight = weightageSorted.slice(0,1+2);
+var beforeRateSorted = weightageSorted.slice(3,1+weightageSorted.length);
+        console.log('finalWeight');
+        console.log(finalWeight);
+ console.log('beforeRateSorted');
+        console.log(beforeRateSorted);
 
+
+// var fixed = 10;
+ //sorting according to rating
+var ratingSorted = beforeRateSorted.sort(function(a,b) {return (parseInt(a.priority) < parseInt(b.priority)) ? 1 : ((parseInt(b.priority) < parseInt(a.priority)) ? -1 : 0);} );
+
+//         var debit = debitStore.getAt(1);
+console.log('ratingSorted');
+        console.log(ratingSorted);
+var sortedArray = finalWeight.concat(ratingSorted);
+console.log('sortedArray');
+        console.log(sortedArray);
         console.log("\nBEFORE UPDATE")
 
         // Use a model's get method to get the value of a property.
 
-        console.log('The name is ' + debit.get('name'));
+        // console.log('The name is ' + debit.get('name'));
     },
     listClick: function (field, index, target, record, e, eOpts) {
         var c = record;
         var debitStore = Ext.getStore('debitStore');
         var fname = c.data.name;
-        if (fname === 'Set pin/change') {
+        if (fname) {
 
             console.log(fname);
             debitStore.each(function (record) {
                 if (record.data.name == fname)
-                    record.set('count', (record.get('count') + 2));
+                    record.set('count', (record.get('count') * 2));
                 record.dirty = true;
                 count = record.data.count;
                 name = record.data.name;
                 console.log(name, count);
             });
-            debitStore.on({
+            // debitStore.on({
 
-                load: this.onStoreLoad
+            //     load: this.onStoreLoad
 
-            });
+            // });
             this.getApplication().redirectTo('second-page');
         }
     },
-    onStoreLoad: function (store, records) {
-        store.each(function (record) {
+    // onStoreLoad: function (store, records) {
+    //     store.each(function (record) {
 
-            console.log('- ' + record.get('name'));
+    //         console.log('- ' + record.get('name'));
 
-        });
-    }
+    //     });
+    // }
 });
