@@ -15,7 +15,7 @@ Ext.define('vertical.controller.MyController', {
         }
     },
     initmain: function () {
-        var debitStore = Ext.getStore('debitStore');
+        var debitStore = Ext.getStore('priorityStore');
         debitStore.sort('weightage', 'DESC');
 
         console.log('These are the names saved:');
@@ -90,7 +90,7 @@ Ext.define('vertical.controller.MyController', {
     },
     listClick: function (field, index, target, record, e, eOpts) {
         var c = record;
-        var debitStore = Ext.getStore('debitStore');
+        var debitStore = Ext.getStore('priorityStore');
         var fname = c.data.name;
         if (fname) {
 

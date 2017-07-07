@@ -10,13 +10,13 @@ Ext.define('vertical.store.priorityStore', {
         model: 'vertical.model.priorityModel',
         storeId: 'priorityStore',
         autoSync: true,
-        sorters: [{
+        // sorters: [{
 
-            property: 'priority',
+        //     property: 'priority',
 
-            direction: 'DESC'
+        //     direction: 'DESC'
 
-        }],
+        // }],
         data: [
             { 'image': 'http://www.sencha.com/assets/images/sencha-avatar-64x64.png', 'name': 'Switch of off', 'weightage': '300', 'priority': '7', 'catogery': 'fund' },
             { 'image': 'http://www.sencha.com/assets/images/sencha-avatar-64x64.png', 'name': 'Set pin/change', 'weightage': '100', 'priority': '1', 'catogery': 'transport' },
@@ -32,10 +32,10 @@ Ext.define('vertical.store.priorityStore', {
         //         direction:'ASC'
         //     },
 
-        getGroupString: function (record) {
+        // getGroupString: function (record) {
 
-            return record.get('catogery')[0];
-        },
+        //     return record.get('catogery')[0];
+        // },
         // proxy: {
         //     type: 'ajax',
         //     reader: {
