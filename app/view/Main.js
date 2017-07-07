@@ -29,7 +29,13 @@ Ext.define('vertical.view.Main', {
                     type: 'hbox'
                 },
                 flex: 2,
-
+                inline: {
+                    wrap: false
+                },
+                scrollable: {
+                    direction: 'horizontal',
+                    directionLock: true,
+                },
                 itemTpl: [
                     '<table>', '<tr class="singleList">',
                     '<td><div class="image" style="width:1.5em;"><div></td>',
@@ -108,7 +114,7 @@ Ext.define('vertical.view.Main', {
                 //     '<tpl if="catogery=="fund"">',
                 //     '<p>{name}</p>',
                 // ]
-                
+
                 itemTpl: [
 
                     '<tpl if="catogery == \'fund\'">',
@@ -139,7 +145,7 @@ Ext.define('vertical.view.Main', {
                     // '</tpl>'
 
                 ]
-                
+
 
 
 
@@ -179,7 +185,7 @@ Ext.define('vertical.view.Main', {
 
             }
 
-           
+
 
 
         ],

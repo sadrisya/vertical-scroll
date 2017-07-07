@@ -37,13 +37,14 @@ Ext.define('vertical.controller.MyController', {
         console.log(finalWeight);
         console.log('beforeRateSorted');
         console.log(beforeRateSorted);
-
-
+        var ratingSorted = beforeRateSorted.sort('priority', 'DESC');
         // var fixed = 10;
+
         //sorting according to rating
-        var ratingSorted = beforeRateSorted.sort(function (a, b) {
-            return (parseInt(a.priority) < parseInt(b.priority)) ? 1 : ((parseInt(b.priority) < parseInt(a.priority)) ? -1 : 0);
-        });
+
+        // var ratingSorted = beforeRateSorted.sort(function (a, b) {
+        //     return (parseInt(a.priority) < parseInt(b.priority)) ? 1 : ((parseInt(b.priority) < parseInt(a.priority)) ? -1 : 0);
+        // });
 
 
 
@@ -51,6 +52,7 @@ Ext.define('vertical.controller.MyController', {
         console.log('ratingSorted');
         console.log(ratingSorted);
         var sortedArray = finalWeight.concat(ratingSorted);
+        // sortedArray.setStore('priorityStore') ;
         console.log('sortedArray');
         console.log(sortedArray);
         console.log("\nBEFORE UPDATE")
@@ -101,15 +103,19 @@ Ext.define('vertical.controller.MyController', {
                 record.dirty = true;
                 count = record.data.priority;
                 name = record.data.name;
-                console.log(name, count);
+                weightage = record.data.weightage;
+                console.log(name, count, weightage);
+               
+              
             });
             // debitStore.on({
 
             //     load: this.onStoreLoad
 
             // });
-            this.getApplication().redirectTo('second-page');
+            // this.getApplication().redirectTo('second-page');
         }
+         this.initmain();
     },
     // onStoreLoad: function (store, records) {
     //     store.each(function (record) {
