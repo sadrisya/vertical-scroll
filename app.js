@@ -22,10 +22,12 @@ Ext.application({
         'ListPanel'
     ],
     models:[
-        'DebitModel'
+        'DebitModel',
+        'priorityModel'
     ],
   stores:[
-        'DebitStore'
+        'DebitStore',
+        'priorityStore'
     ],
 controllers:[
     'MyController'
